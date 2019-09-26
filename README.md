@@ -1,24 +1,24 @@
-# xerror
-xtrct.io error class
+# rerror
+roleup.io error class
 
 ## Install
 ```bash
-npm i -S @xtrctio/xerror
+npm i -S @roleup/xerror
 ```
 
 ## Use
 ```javascript
-const XError = require('@xtrctio/xerror');
+const RError = require('@roleup/rerror');
 
 // Throws error which inheirits from Error and has a default http code of 500 INTERNAL_SERVER_ERROR
-const throws = () => { throw new XError('boom'); };
+const throws = () => { throw new RError('boom'); };
 
 // Throw with a different http code
 // XError.HTTP_STATUS is just the 'http-status' package
-const throwsWithHttpError = () => { throw new XError('boom', XError.HTTP_STATUS.BAD_REQUEST); };
+const throwsWithHttpError = () => { throw new RError('boom', RError.HTTP_STATUS.BAD_REQUEST); };
 
 // Throw with special data
-const throwsWithData = () => { throw new XError('boom', undefined, {foo: 'bar'}); };
+const throwsWithData = () => { throw new RError('boom', undefined, {foo: 'bar'}); };
 ```
 
 <a name="RError"></a>

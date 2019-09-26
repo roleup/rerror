@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-expressions */
 
-const { expect } = require('chai');
+import { expect } from 'chai';
 
-const HttpStatus = require('http-status');
-const RError = require('../index');
+import HttpStatus from 'http-status';
+import { RError } from '../index';
 
 describe('RError unit tests', () => {
   it('throws correct error class', () => {

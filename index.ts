@@ -1,15 +1,15 @@
-const HttpStatus = require('http-status');
+import * as HttpStatus from 'http-status';
 
 /**
  * @class
  */
-class RError extends Error {
+export class RError extends Error {
   /**
    * @param {string} message error message
    * @param {number} [code=500] http error code
    * @param {any} [data] any extra data to attach to the error
    */
-  constructor(message, code = HttpStatus.INTERNAL_SERVER_ERROR, data) {
+  constructor(message: string, code = HttpStatus.INTERNAL_SERVER_ERROR, data?: any) {
     super(message);
 
     if (Error.captureStackTrace) {
@@ -21,7 +21,12 @@ class RError extends Error {
     this.data = data;
     this.dateTime = new Date();
   }
-}
 
-RError.HTTP_STATUS = HttpStatus;
-module.exports = RError;
+  readonly code: number;
+
+  readonly data?: any;
+
+  readonly dateTime: Date;
+
+  static readonly HTTP_STATUS = HttpStatus;
+}
