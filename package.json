@@ -51,7 +51,7 @@
     "error"
   ],
   "license": "MIT",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "prettier": "@roleup/prettier-config",
   "repository": {
     "type": "git",
@@ -62,5 +62,6 @@
     "lint": "eslint \"**/*.ts\" --fix",
     "test": "npm run unit && npm run lint",
     "unit": "nyc mocha -r source-map-support/register -r ts-node/register -r tsconfig-paths/register --use_strict --exit \"tests/**/*.unit.ts\""
-  }
+  },
+  "types": "index.d.ts"
 }
