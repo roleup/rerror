@@ -9,7 +9,7 @@ declare module '@roleup/rerror/index' {
      * @param {number} [code=500] http error code
      * @param {any} [data] any extra data to attach to the error
      */
-    constructor(message: string, code: number | undefined, data: any);
+    constructor(message: string, code?: number, data?: any);
 
     readonly code: number;
 
@@ -19,6 +19,9 @@ declare module '@roleup/rerror/index' {
 
     static readonly HTTP_STATUS: HttpStatus.HttpStatus;
   }
+}
+declare module '@roleup/rerror/tests/rError.unit' {
+  export {};
 }
 declare module '@roleup/rerror' {
   import main = require('@roleup/rerror/index');
